@@ -7,28 +7,75 @@
 //
 
 import UIKit
+import CoreLocation
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, CLLocationManagerDelegate {
 
-    var distance: Float = 3;
+    let manager = CLLocationManager()
+    var location: CLLocation!
+    var distance: Float = 3
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         distanceLabel.text = String(distance) + " km"
+        
+        manager.delegate = self
+        manager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        manager.requestWhenInUseAuthorization()
+        manager.startUpdatingLocation()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        location = locations.first!
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if(status == CLAuthorizationStatus.denied) {
+            showLocationDisabledPopUp()
+        }
+    }
+    
+    func showLocationDisabledPopUp() {
+        let alertController = UIAlertController(title: "Location Access Disabled",
+                                                message: "App will not work without this permission!",
+                                                preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        
+        let openAction = UIAlertAction(title: "Open Settings", style: .default) { (action) in
+            if let url = URL(string: UIApplicationOpenSettingsURLString) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        }
+        alertController.addAction(openAction)
+        
+        self.present(alertController, animated: true, completion: nil)
     }
 
     @IBOutlet weak var distanceLabel: UILabel!
+    
     @IBAction func slider(_ sender: UISlider) {
         let distanceInt = Int(sender.value)
         distance = Float(distanceInt) / 2
-        distanceLabel.text = String(distance) + " km"
+        distanceLabel.text = "\(distance) km"
     }
+    
+    @IBAction func findBtn(_ sender: UIButton) {
+        print(distance)
+        if(location != nil) {
+            print(location.coordinate.latitude)
+            print(location.coordinate.longitude)
+        } else {
+            showLocationDisabledPopUp()
+        }
+    }
+    
 
 }
 

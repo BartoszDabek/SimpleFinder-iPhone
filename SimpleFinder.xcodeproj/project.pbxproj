@@ -413,7 +413,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SimpleFinder/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bdabek.SimpleFinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -427,7 +427,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = SimpleFinder/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bdabek.SimpleFinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -509,6 +509,7 @@
 				840A197C1FFF721100316219 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		840A197D1FFF721100316219 /* Build configuration list for PBXNativeTarget "SimpleFinderTests" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +518,7 @@
 				840A197F1FFF721100316219 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		840A19801FFF721100316219 /* Build configuration list for PBXNativeTarget "SimpleFinderUITests" */ = {
 			isa = XCConfigurationList;
@@ -525,6 +527,7 @@
 				840A19821FFF721100316219 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -48,6 +48,9 @@
                                 <color key="backgroundColor" red="0.8842261085305253" green="0.90351179296648443" blue="0.93994915674603174" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Find"/>
+                                <connections>
+                                    <action selector="findBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LI7-Nq-13I"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
