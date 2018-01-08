@@ -14,16 +14,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     let manager = CLLocationManager()
     var location: CLLocation!
     var distance: Float = 3
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         distanceLabel.text = String(distance) + " km"
         
-        manager.delegate = self
-        manager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         manager.requestWhenInUseAuthorization()
-        manager.startUpdatingLocation()
+
+        if(CLLocationManager.locationServicesEnabled()) {
+            manager.delegate = self
+            manager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            manager.startUpdatingLocation()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -69,8 +71,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     @IBAction func findBtn(_ sender: UIButton) {
         print(distance)
         if(location != nil) {
+            let distanceInMeters = Int(distance * 1000)
+            let coordinatesAsString = "\(location.coordinate.latitude),\(location.coordinate.longitude)"
             print(location.coordinate.latitude)
             print(location.coordinate.longitude)
+            
+            GasStationApi.getStations(coordinates: coordinatesAsString, radius: distanceInMeters) { (results:[GasStation]) in
+                for result in results {
+                    print("\(result) \n")
+                }
+            }
         } else {
             showLocationDisabledPopUp()
         }

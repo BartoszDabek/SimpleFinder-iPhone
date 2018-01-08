@@ -14,6 +14,8 @@
 		840A19601FFF721000316219 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840A195E1FFF721000316219 /* LaunchScreen.storyboard */; };
 		840A196B1FFF721100316219 /* SimpleFinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A196A1FFF721100316219 /* SimpleFinderTests.swift */; };
 		840A19761FFF721100316219 /* SimpleFinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A19751FFF721100316219 /* SimpleFinderUITests.swift */; };
+		84438DFF2003E8A500045FFE /* GasStationApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84438DFE2003E8A500045FFE /* GasStationApi.swift */; };
+		84438E012003F3AC00045FFE /* GasStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84438E002003F3AC00045FFE /* GasStation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		840A19711FFF721100316219 /* SimpleFinderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleFinderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		840A19751FFF721100316219 /* SimpleFinderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleFinderUITests.swift; sourceTree = "<group>"; };
 		840A19771FFF721100316219 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84438DFE2003E8A500045FFE /* GasStationApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GasStationApi.swift; sourceTree = "<group>"; };
+		84438E002003F3AC00045FFE /* GasStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GasStation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,8 @@
 		840A19541FFF721000316219 /* SimpleFinder */ = {
 			isa = PBXGroup;
 			children = (
+				84438DFD2003E83400045FFE /* Models */,
+				84438DFC2003E82500045FFE /* API */,
 				840A19551FFF721000316219 /* AppDelegate.swift */,
 				840A19571FFF721000316219 /* ViewController.swift */,
 				840A19591FFF721000316219 /* Main.storyboard */,
@@ -123,6 +129,22 @@
 				840A19771FFF721100316219 /* Info.plist */,
 			);
 			path = SimpleFinderUITests;
+			sourceTree = "<group>";
+		};
+		84438DFC2003E82500045FFE /* API */ = {
+			isa = PBXGroup;
+			children = (
+				84438DFE2003E8A500045FFE /* GasStationApi.swift */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
+		84438DFD2003E83400045FFE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				84438E002003F3AC00045FFE /* GasStation.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +281,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84438E012003F3AC00045FFE /* GasStation.swift in Sources */,
+				84438DFF2003E8A500045FFE /* GasStationApi.swift in Sources */,
 				840A19581FFF721000316219 /* ViewController.swift in Sources */,
 				840A19561FFF721000316219 /* AppDelegate.swift in Sources */,
 			);
