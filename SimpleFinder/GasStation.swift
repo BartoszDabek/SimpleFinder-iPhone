@@ -8,38 +8,25 @@
 
 import Foundation
 
-struct Results {
-    let results: [GasStation]
-    
-    init(json: [String: Any]) {
-        results = json["results"] as! [GasStation]
-    }
-}
 
 public struct GasStation {
     let icon: String
     let name: String
     let vicinity: String
-    //  let location: (latitude: Double, longitude: Double)
-    //  let geometry: Geometry
-    
+    let location: Location
+}
+
+extension GasStation {
     init(json: [String: Any]) {
         icon = json["icon"] as! String
         name = json["name"] as! String
         vicinity = json["vicinity"] as! String
-        //     let coordinateJSON = json["geometry"] as? String
-        //   let geo = coordinateJSON["location"] as? [String: Double]
-        // let latitude = geo["lat"] as Double
-        //  let longitude = geo["lng"] as Double
-        // location = (latitude, longitude)
+        
+        let geometry = json["geometry"] as! [String:Any]
+        let coordinates = geometry["location"] as! [String: Double]
+        
+        location = Location(location: coordinates)
     }
 }
 
-struct Geometry {
-    let location: Location
-}
 
-struct Location {
-    let lat: Float
-    let lng: Float
-}

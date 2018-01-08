@@ -16,6 +16,7 @@
 		840A19761FFF721100316219 /* SimpleFinderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840A19751FFF721100316219 /* SimpleFinderUITests.swift */; };
 		84438DFF2003E8A500045FFE /* GasStationApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84438DFE2003E8A500045FFE /* GasStationApi.swift */; };
 		84438E012003F3AC00045FFE /* GasStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84438E002003F3AC00045FFE /* GasStation.swift */; };
+		84438E032004003600045FFE /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84438E022004003600045FFE /* Location.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		840A19771FFF721100316219 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84438DFE2003E8A500045FFE /* GasStationApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GasStationApi.swift; sourceTree = "<group>"; };
 		84438E002003F3AC00045FFE /* GasStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GasStation.swift; sourceTree = "<group>"; };
+		84438E022004003600045FFE /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				84438E002003F3AC00045FFE /* GasStation.swift */,
+				84438E022004003600045FFE /* Location.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 			files = (
 				84438E012003F3AC00045FFE /* GasStation.swift in Sources */,
 				84438DFF2003E8A500045FFE /* GasStationApi.swift in Sources */,
+				84438E032004003600045FFE /* Location.swift in Sources */,
 				840A19581FFF721000316219 /* ViewController.swift in Sources */,
 				840A19561FFF721000316219 /* AppDelegate.swift in Sources */,
 			);
