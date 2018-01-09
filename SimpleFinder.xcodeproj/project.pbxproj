@@ -17,6 +17,8 @@
 		84438DFF2003E8A500045FFE /* GasStationApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84438DFE2003E8A500045FFE /* GasStationApi.swift */; };
 		84438E012003F3AC00045FFE /* GasStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84438E002003F3AC00045FFE /* GasStation.swift */; };
 		84438E032004003600045FFE /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84438E022004003600045FFE /* Location.swift */; };
+		84712D972004C550004BC1F7 /* GasStationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84712D962004C550004BC1F7 /* GasStationViewController.swift */; };
+		84712D992004D08E004BC1F7 /* GasStationViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84712D982004D08E004BC1F7 /* GasStationViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		84438DFE2003E8A500045FFE /* GasStationApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GasStationApi.swift; sourceTree = "<group>"; };
 		84438E002003F3AC00045FFE /* GasStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GasStation.swift; sourceTree = "<group>"; };
 		84438E022004003600045FFE /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		84712D962004C550004BC1F7 /* GasStationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GasStationViewController.swift; sourceTree = "<group>"; };
+		84712D982004D08E004BC1F7 /* GasStationViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GasStationViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,8 @@
 				840A195C1FFF721000316219 /* Assets.xcassets */,
 				840A195E1FFF721000316219 /* LaunchScreen.storyboard */,
 				840A19611FFF721000316219 /* Info.plist */,
+				84712D962004C550004BC1F7 /* GasStationViewController.swift */,
+				84712D982004D08E004BC1F7 /* GasStationViewCell.swift */,
 			);
 			path = SimpleFinder;
 			sourceTree = "<group>";
@@ -289,6 +295,8 @@
 				84438E032004003600045FFE /* Location.swift in Sources */,
 				840A19581FFF721000316219 /* ViewController.swift in Sources */,
 				840A19561FFF721000316219 /* AppDelegate.swift in Sources */,
+				84712D992004D08E004BC1F7 /* GasStationViewCell.swift in Sources */,
+				84712D972004C550004BC1F7 /* GasStationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

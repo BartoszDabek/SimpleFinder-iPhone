@@ -77,8 +77,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
             print(location.coordinate.longitude)
             
             GasStationApi.getStations(coordinates: coordinatesAsString, radius: distanceInMeters) { (results:[GasStation]) in
-                for result in results {
-                    print("\(result) \n")
+                DispatchQueue.main.async {
+                    let gasStationController = self.storyboard?.instantiateViewController(withIdentifier: "GasStationViewController") as! GasStationViewController
+                    gasStationController.gasStations = results
+                    self.navigationController?.pushViewController(gasStationController, animated: true)
                 }
             }
         } else {
