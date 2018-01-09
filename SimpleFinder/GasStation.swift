@@ -10,7 +10,6 @@ import Foundation
 
 
 public struct GasStation {
-    let icon: String
     let name: String
     let vicinity: String
     let location: Location
@@ -18,7 +17,6 @@ public struct GasStation {
 
 extension GasStation {
     init(json: [String: Any]) {
-        icon = json["icon"] as! String
         name = json["name"] as! String
         vicinity = json["vicinity"] as! String
         

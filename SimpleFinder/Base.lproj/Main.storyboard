@@ -127,9 +127,6 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6m7-1R-KQl">
-                                                    <rect key="frame" x="20" y="29" width="125" height="125"/>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5l-yX-wqv">
                                                     <rect key="frame" x="180" y="120" width="180" height="17"/>
                                                     <constraints>
@@ -139,20 +136,23 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6m7-1R-KQl">
+                                                    <rect key="frame" x="70" y="56" width="70" height="70"/>
+                                                </imageView>
                                             </subviews>
                                         </view>
                                         <constraints>
-                                            <constraint firstItem="d5l-yX-wqv" firstAttribute="leading" secondItem="6m7-1R-KQl" secondAttribute="trailing" constant="35" id="1BA-nf-Al3"/>
+                                            <constraint firstItem="d5l-yX-wqv" firstAttribute="leading" secondItem="6m7-1R-KQl" secondAttribute="trailing" constant="40" id="1BA-nf-Al3"/>
                                             <constraint firstItem="Xgj-1y-LCe" firstAttribute="top" secondItem="4Qd-bn-Sh6" secondAttribute="bottom" id="2tM-B2-VFR"/>
-                                            <constraint firstItem="6m7-1R-KQl" firstAttribute="leading" secondItem="sVz-y0-Ql8" secondAttribute="leadingMargin" constant="12" id="CSf-hq-x4D"/>
-                                            <constraint firstItem="Xgj-1y-LCe" firstAttribute="leading" secondItem="6m7-1R-KQl" secondAttribute="trailing" constant="35" id="Eor-fO-xll"/>
-                                            <constraint firstAttribute="bottomMargin" secondItem="6m7-1R-KQl" secondAttribute="bottom" constant="20" id="Er1-Sd-7yW"/>
-                                            <constraint firstItem="4Qd-bn-Sh6" firstAttribute="leading" secondItem="6m7-1R-KQl" secondAttribute="trailing" constant="35" id="GXi-B2-2Vb"/>
+                                            <constraint firstItem="6m7-1R-KQl" firstAttribute="leading" secondItem="sVz-y0-Ql8" secondAttribute="leadingMargin" constant="62" id="CSf-hq-x4D"/>
+                                            <constraint firstItem="Xgj-1y-LCe" firstAttribute="leading" secondItem="6m7-1R-KQl" secondAttribute="trailing" constant="40" id="Eor-fO-xll"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="6m7-1R-KQl" secondAttribute="bottom" constant="48" id="Er1-Sd-7yW"/>
+                                            <constraint firstItem="4Qd-bn-Sh6" firstAttribute="leading" secondItem="6m7-1R-KQl" secondAttribute="trailing" constant="40" id="GXi-B2-2Vb"/>
                                             <constraint firstItem="d5l-yX-wqv" firstAttribute="top" secondItem="Xgj-1y-LCe" secondAttribute="bottom" constant="10" id="PgJ-JA-k7Z"/>
-                                            <constraint firstAttribute="trailingMargin" secondItem="6m7-1R-KQl" secondAttribute="trailing" constant="261" id="SkU-7v-nus"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="6m7-1R-KQl" secondAttribute="trailing" constant="266" id="SkU-7v-nus"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="Xgj-1y-LCe" secondAttribute="trailing" constant="46" id="THp-GI-WJH"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="d5l-yX-wqv" secondAttribute="trailing" constant="46" id="Uxd-qT-fIE"/>
-                                            <constraint firstItem="6m7-1R-KQl" firstAttribute="top" secondItem="sVz-y0-Ql8" secondAttribute="topMargin" constant="21" id="d6H-6a-PZI"/>
+                                            <constraint firstItem="6m7-1R-KQl" firstAttribute="top" secondItem="sVz-y0-Ql8" secondAttribute="topMargin" constant="48" id="d6H-6a-PZI"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="d5l-yX-wqv" secondAttribute="bottom" constant="37" id="e7g-2T-Rpc"/>
                                             <constraint firstItem="d5l-yX-wqv" firstAttribute="top" secondItem="Xgj-1y-LCe" secondAttribute="bottom" constant="10" id="fSY-IA-eAs"/>
                                             <constraint firstItem="4Qd-bn-Sh6" firstAttribute="top" secondItem="sVz-y0-Ql8" secondAttribute="topMargin" constant="12" id="p0W-rT-nvb"/>
@@ -160,6 +160,8 @@
                                             <constraint firstAttribute="trailingMargin" secondItem="4Qd-bn-Sh6" secondAttribute="trailing" constant="46" id="xLb-zU-462"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="stationDistance" destination="d5l-yX-wqv" id="lzn-ty-p6Y"/>
+                                            <outlet property="stationImage" destination="6m7-1R-KQl" id="GhG-2D-bcO"/>
                                             <outlet property="stationName" destination="4Qd-bn-Sh6" id="haA-2w-v0E"/>
                                             <outlet property="stationVicinity" destination="Xgj-1y-LCe" id="1mp-zo-E5e"/>
                                         </connections>

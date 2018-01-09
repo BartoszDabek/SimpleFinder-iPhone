@@ -31,6 +31,7 @@ class GasStationViewController: UIViewController, UICollectionViewDelegate, UICo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "stationCell", for: indexPath) as! GasStationViewCell
         
+        cell.stationImage.image = UIImage(named: "gas_station")
         cell.stationName.text = gasStations[indexPath.item].name
         cell.stationVicinity.text = gasStations[indexPath.item].vicinity
         
@@ -40,3 +41,4 @@ class GasStationViewController: UIViewController, UICollectionViewDelegate, UICo
 
 
 }
+
