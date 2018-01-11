@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 class GasStationViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
@@ -38,7 +39,18 @@ class GasStationViewController: UIViewController, UICollectionViewDelegate, UICo
         return cell
     }
     
-
-
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let regionDistance:CLLocationDistance = 1000
+        let coordinates = CLLocationCoordinate2D(latitude: gasStations[indexPath.item].location.latitude,
+                                                 longitude: gasStations[indexPath.item].location.longitude)
+        let regionSpan = MKCoordinateRegionMakeWithDistance(coordinates, regionDistance, regionDistance)
+        
+        let options = [MKLaunchOptionsMapCenterKey: NSValue(mkCoordinate: regionSpan.center), MKLaunchOptionsMapSpanKey: NSValue(mkCoordinateSpan: regionSpan.span)]
+        
+        let placemark = MKPlacemark(coordinate: coordinates)
+        let mapItem = MKMapItem(placemark: placemark)
+        mapItem.name = gasStations[indexPath.item].name
+        mapItem.openInMaps(launchOptions: options)
+    }
 }
 
