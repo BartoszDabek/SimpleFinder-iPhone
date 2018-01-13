@@ -12,6 +12,7 @@ import Foundation
 public struct GasStation {
     let name: String
     let vicinity: String
+    var distance: String?
     let location: Location
 }
 

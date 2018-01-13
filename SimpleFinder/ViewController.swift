@@ -115,7 +115,19 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
                     let gasStationController = self.storyboard?.instantiateViewController(withIdentifier: "GasStationViewController") as! GasStationViewController
                     
                     gasStationController.gasStations = results
-                    self.navigationController?.pushViewController(gasStationController, animated: true)
+                    
+
+                    for i in 0...gasStationController.gasStations.count - 1 {
+                        let destination = "\(gasStationController.gasStations[i].location.latitude),\(gasStationController.gasStations[i].location.longitude)"
+                        GasStationApi.getDistances(origins: coordinatesAsString, desinations: destination) { (output:String) in
+                            print(output)
+                            gasStationController.gasStations[i].distance = output
+                        }
+                    }
+                    
+                    DispatchQueue.main.async {
+                        self.navigationController?.pushViewController(gasStationController, animated: true)
+                    }
                 }
             }
         } else {

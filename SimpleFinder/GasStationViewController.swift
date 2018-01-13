@@ -35,6 +35,7 @@ class GasStationViewController: UIViewController, UICollectionViewDelegate, UICo
         cell.stationImage.image = UIImage(named: "gas_station")
         cell.stationName.text = gasStations[indexPath.item].name
         cell.stationVicinity.text = gasStations[indexPath.item].vicinity
+        cell.stationDistance.text = gasStations[indexPath.item].distance
         
         return cell
     }
