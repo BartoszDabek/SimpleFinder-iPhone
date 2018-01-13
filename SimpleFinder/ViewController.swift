@@ -14,9 +14,25 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     let manager = CLLocationManager()
     var location: CLLocation!
     var distance: Float = 3
-
+    let preferences = UserDefaults.standard
+    let dark = UIColor.darkGray
+    let light = UIColor.white
+    let key = "bg-theme"
+    let darkString = "Dark"
+    let lightString = "Light"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if preferences.object(forKey: key) != nil {
+            let currentTheme = preferences.object(forKey: key) as! String
+            if(currentTheme == darkString) {
+                self.view.backgroundColor = dark
+            } else {
+                self.view.backgroundColor = light
+            }
+        }
+        
         distanceLabel.text = String(distance) + " km"
         
         manager.requestWhenInUseAuthorization()
@@ -30,6 +46,27 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        if event?.subtype == UIEventSubtype.motionShake {
+            if preferences.object(forKey: key) == nil {
+                self.view.backgroundColor = dark
+                preferences.set(darkString, forKey: key)
+                preferences.synchronize()
+            } else {
+                let currentTheme = preferences.object(forKey: key) as! String
+                if(currentTheme == darkString) {
+                    self.view.backgroundColor = light
+                    preferences.set(lightString, forKey: key)
+                    preferences.synchronize()
+                } else {
+                    self.view.backgroundColor = dark
+                    preferences.set(darkString, forKey: key)
+                    preferences.synchronize()
+                }
+            }
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -69,16 +106,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     @IBAction func findBtn(_ sender: UIButton) {
-        print(distance)
         if(location != nil) {
             let distanceInMeters = Int(distance * 1000)
             let coordinatesAsString = "\(location.coordinate.latitude),\(location.coordinate.longitude)"
-            print(location.coordinate.latitude)
-            print(location.coordinate.longitude)
             
             GasStationApi.getStations(coordinates: coordinatesAsString, radius: distanceInMeters) { (results:[GasStation]) in
                 DispatchQueue.main.async {
                     let gasStationController = self.storyboard?.instantiateViewController(withIdentifier: "GasStationViewController") as! GasStationViewController
+                    
                     gasStationController.gasStations = results
                     self.navigationController?.pushViewController(gasStationController, animated: true)
                 }
@@ -90,4 +125,3 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     
 
 }
-
